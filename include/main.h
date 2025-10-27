@@ -1,9 +1,10 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
+#include "glad/glad.h"
+#include "glfw/glfw3.h"
+
 #include <iostream>
-#include <vector>
-#include <string>
 
 using namespace std;
 
