@@ -1,0 +1,17 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "MSVC Build and Debug Active File",           // Configuration name
+      "type": "cppvsdbg",                                   // Use the Visual Studio debugger
+      "request": "launch",                                  // Launch configuration
+      "program": "${workspaceFolder}/bin/my_project.exe",   // Path to the compiled executable
+      "args": [],
+      "stopAtEntry": false,                                 // Do not stop at the entry point
+      "cwd": "${workspaceFolder}",                          // Set working directory to the source file's directory
+      "environment": [],
+      "console": "integratedTerminal",                      // Use the integrated terminal
+      "preLaunchTask": "cl.exe build project"               // Task to build the active file before debugging
+    }
+  ]
+}
