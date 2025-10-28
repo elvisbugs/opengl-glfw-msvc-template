@@ -1,50 +1,65 @@
-# OpenGL Template for VS Code
-NEEDS TO BE WRITTEN
+# OpenGL (GLFW + GLAD) Project Template for MSVC
+This is a basic template for starting an OpenGL project using **GLFW** for window management and **GLAD** for loading OpenGL functions, pre-configured to compile with `cl.exe` (Microsoft's C/C++ compiler) directly inside VS Code.
+
+The main advantage is using the powerful MSVC compiler in a lightweight environment without needing to create a Solution file (`.sln`) or open the full Visual Studio IDE.
+
+It comes pre-configured with:
+* **GLFW:** For window creation and OpenGL context management;
+
+* **GLAD:** For loading modern OpenGL functions;
+
+* **tasks.json:** To automate the build process;
+
+* **c_cpp_properties.json:** For accurate IntelliSense;
+
+* **launch.json:** For debugging (F5);
+
+* **Folder Structure:** A clean separation of `src`, `lib`, `include`, `bin` and `build` directories.
+
 
 ## Prerequisites
-
+The prerequisites are the same as those of the base template used to create this project:
+[cpp-mscv-template](https://github.com/elvisbugs/cpp-mscv-template)
 
 ---
-
-## Project Structure
-NEEDS TO BE UPDATED
-This template expects the following directory structure:
-
+## Template Structure
 ```
-my_project/
-│
+opengl-glfw-msvc-template/
 ├── .vscode/
-│   ├── tasks.json              # Build task (compiles project)
-│   ├── launch.json             # Debugger config (launches executable)
-│   └── c_cpp_properties.json   # IntelliSense config
+│   ├── c_cpp_properties.json   # IntelliSense configuration
+│   ├── launch.json             # Debugging configuration (F5)
+│   └── tasks.json              # Build task (Ctrl+Shift+B)
 │
-├── bin/                        # Folder for the final compiled executable
-│   └── my_project.exe
+├── bin/                    # Output for executables (.exe) and DLLs
+├── build/                  # Output for intermediate files (.obj, .pdb)
+├── include/                # Headers (.h) specific to your project
+│   └── main.h
 │
-├── build/                      # Folder for intermediate object files
-│   └── main.obj                # Where intermediate object files (.obj) are located
-│   └── utils.obj
+├── lib/                    # Third-party libraries
+│   ├── include/
+│   │   ├── glad/           # GLAD headers
+│   │   └── glfw/           # GLFW headers
+│   ├── src/
+│   │   └── glad/
+│   │       └── glad.c      # GLAD source file (compiled with your project)
+│   ├── glfw3.dll           # GLFW DLL (required for execution)
+│   └── glfw3.lib           # GLFW import library (required for compiling)
 │
-├── include/                    # Folder for header files (.h, .hpp)
-│   └── utils.h 
+├── src/                    # Your project's source code (.cpp)
+│   └── main.cpp
 │
-├── src/                        # Folder for source files (.cpp)
-│   ├── main.cpp
-│   └── utils.cpp
-│
-├── lib/                        # (Optional) Third-party libraries
-│
-├── .gitignore
-└── README.md
+└── README.md               # This file
 ```
 
 ---
 ## Environment Setup
+The environment setup are the same as those of the base template used to create this project:
+[cpp-mscv-template](https://github.com/elvisbugs/cpp-mscv-template)
 
 ---
-## How to Use
-
+## How to Run
+Just press F5 (with any file open) to build and launch the project.
 
 ---
-## References
-
+## Acknowledgement
+This template was based on the [cpp-mscv-template](https://github.com/elvisbugs/cpp-mscv-template)
